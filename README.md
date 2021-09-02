@@ -53,3 +53,20 @@ The Nāmakanui instruments produce data from both sidebands and polarizations. I
 
 The script can combine multiple standard peak intensity data files for following analysis, which explore the relationships between the peaks at LSB, USB, P0 & P1 and other parameters (LO frequency, Tsys, utdate, etc.).
 **prerequisite**:  one has extracted the peak intensity data as one or multiple files (stats-max.csv) and one also the sql data files (sql.tsv) 
+
+
+
+### Aweoweo daily SQL update
+
+An automated SQL search which returns the filelist and a table. Please see [Jiangxuejian](https://github.com/Jiangxuejian)/**[aweoweo_database](https://github.com/Jiangxuejian/aweoweo_database)**
+
+1. aweoweo_file_*.txt show the data file paths of a given date. For example:
+```
+/jcmtdata/raw/acsis/spectra/20210407/00007/a20210407_00007_01_0001.sdf
+```
+
+2. aweoweo_sql_*.txt show the SQL records of a given date. Available entries are:
+
+| utdate | obsnum | project | object | file_id | msbtitle | obs_sb | subsysnr | subbands | restfreq | molecule | transiti |
+| ------ | ------ | ------- | ------ | ------- | -------- | ------ | -------- | -------- | -------- | -------- | -------- |
+|        |        |         |        |         |          |        |          |          |          |          |          |
