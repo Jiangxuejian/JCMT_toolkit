@@ -26,7 +26,7 @@ For complex and advance query, please use SQL directly,
 or use the generated *.sql file as a starting point.
 
 To-do: add the following keyword in SQL filter:
-obs_sb, molecule, subbands (e.g., 250MHz), etc.
+obs_sb, subbands (e.g., 250MHz), etc.
 
 2021-03-24 Xue-Jian Jiang
 2021-07-13 returned table is ordered by utdate obsnum
@@ -39,11 +39,15 @@ from os import path
 import pandas as pd
 from datetime import datetime
 import argparse
-parser = argparse.ArgumentParser(usage='%(prog)s [instrument] [-p project-ID] [-d utdate] [-n obsnum]',
-                                 description=' generate a SQL file to search the JCMT database;\
-                                             if neither project ID nor UTdate is provided, return all entries of today,\
-                                                if available.\
-                                             Then generate a txt file which lists all data file paths.')
+parser = argparse.ArgumentParser(usage='%(prog)s  eaosql.py [instrument] [-p project-ID] [-d utdate] [-n obsnum] [-o object] [-m molecule]',
+                                 description='\
+                                 This script generate a simple SQL file and search the JCMT database;\
+                                 if neither project ID nor UTdate is provided, return all entries of today\
+                                 if available.\
+                                 It also generate a txt file which lists all data file paths.\
+                                 For complex and advance query, please use SQL directly,\
+                                 or use the generated *.sql file as a starting point.\
+                                             ')
 parser.add_argument("instrument", help="enter Uu, Aweoweo, HARP or SCUBA2", type = str.upper,
                     choices=['UU', 'HARP', 'SCUBA2','AWEOWEO'])
 parser.add_argument("-p", "--project",  help="project code", type = str.upper)
