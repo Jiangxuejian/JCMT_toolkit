@@ -3,7 +3,7 @@ This program can only be used at EAO/JCMT:
 
 usage: eaosql.py [instrument] [-p project-ID] [-d utdate] [-n obsnum] [-o object] [-m molecule]
 positional arguments:
-  {uu,harp,scuba2}      enter Uu, HARP or SCUBA2
+  {uu,aweoweo,harp,scuba2}      enter Uu, Aweoweo, HARP or SCUBA2
 
 optional arguments:
   -h, --help            show this help message and exit
