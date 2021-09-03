@@ -88,7 +88,7 @@ def main():
 def omp_scuba2(instrum):
         ompcmd_base = '''\
 mysql -h omp1 -u staff -b -p -e "select project, utdate, obsnum, object,
-file_id, msbtitle
+file_id, msbtitle, tau225st
 from jcmt.COMMON
 join jcmt.SCUBA2 on jcmt.COMMON.obsid=jcmt.SCUBA2.obsid
 join jcmt.FILES on jcmt.SCUBA2.obsid_subsysnr=jcmt.FILES.obsid_subsysnr
@@ -101,7 +101,7 @@ def omp_acsis(instrum):
         ompcmd_base = '''\
 mysql -h omp1 -u staff -b -p -e "select project, utdate, obsnum, object,
 file_id, msbtitle, obs_sb, jcmt.ACSIS.subsysnr, subbands, jcmt.ACSIS.restfreq,
-molecule, transiti
+molecule, transiti, tau225st
 from jcmt.ACSIS
 join jcmt.COMMON on jcmt.ACSIS.obsid=jcmt.COMMON.obsid
 join jcmt.FILES on jcmt.ACSIS.obsid_subsysnr=jcmt.FILES.obsid_subsysnr
