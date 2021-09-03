@@ -1,6 +1,11 @@
 ### eaosql.py
 
-##### A one-line python script to quickly search the database and get a file list.
+##### motivation: run one command to quickly search the internal database, get a info table and get a data file list for subsequent data reduction.
+Examples: 
+
+>python eaosql.py Uu -d 20210901
+>
+>python eaosql.py Aweoweo -p M21AEC36 -m CO
 
    >python eaosql.py -h
 
@@ -29,9 +34,15 @@
      -d UTDATE, --utdate UTDATE
                            UT date in format of YYYYMMDD
 
-Example: 
+Returns: 
 
->python eaosql.py Uu -d 20210901
+> *_sql.sql
+>
+> sql.tsv
+>
+> filelist.lis 
+
+
 
 ### Polarization-separated reduction (Nāmakanui specific)
 
