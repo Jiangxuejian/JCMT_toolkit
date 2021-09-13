@@ -3,7 +3,7 @@ This program can only be used at EAO/JCMT:
 
 usage: eaosql.py [instrument] [-p project-ID] [-d utdate] [-n obsnum] [-o object] [-m molecule]
 positional arguments:
-  {uu,aweoweo,harp,scuba2}      enter Uu, Aweoweo, HARP or SCUBA2
+  {UU,HARP,SCUBA2,AWEOWEO,RXA3M,ALAIHI}     enter Uu, Aweoweo, alaihi, RxA3m, HARP or SCUBA2
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -48,8 +48,8 @@ parser = argparse.ArgumentParser(usage='%(prog)s  eaosql.py [instrument] [-p pro
                                  For complex and advance query, please use SQL directly,\
                                  or use the generated *.sql file as a starting point.\
                                              ')
-parser.add_argument("instrument", help="enter Uu, Aweoweo, HARP or SCUBA2", type = str.upper,
-                    choices=['UU', 'HARP', 'SCUBA2','AWEOWEO'])
+parser.add_argument("instrument", help="enter Uu, Aweoweo, Alaihi, RxA3m, HARP or SCUBA2", type = str.upper,
+                    choices=['UU', 'HARP', 'SCUBA2','AWEOWEO','RXA3M','ALAIHI'])
 parser.add_argument("-p", "--project",  help="project code", type = str.upper)
 parser.add_argument("-n", "--obsnum", help="observation number", type=int)
 parser.add_argument("-o", "--object", help="observing target", type=str.upper)
@@ -83,6 +83,9 @@ def main():
                         omp_acsis(instrum)
                 if instr == 'AWEOWEO':
                         instrum = 'Aweoweo'
+                        omp_acsis(instrum)
+                if instr == 'RXA3M':
+                        instrum = 'RxA3m'
                         omp_acsis(instrum)
 
 def omp_scuba2(instrum):
